@@ -1,0 +1,21 @@
+.profile__photo-edit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 50px;
+    border: 2px solid #ffffff;
+}
+.profile__photo-edit:hover {
+    color: #FFFFFF;
+    opacity: 0.6;
+    transition: 0.3s ease-in;
+    cursor: pointer;
+}
+@media screen and (max-width: 960px) {
+    .profile__photo-edit {
+        margin-top: 36px;
+        width: 282px;
+        height: 50px;
+    }
+}
