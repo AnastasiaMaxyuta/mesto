@@ -1,0 +1,6 @@
+.profile__general-information {
+    display: inline-flex;
+    align-items: center;
+    max-width: 336px;
+    width: 100%;
+}

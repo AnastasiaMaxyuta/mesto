@@ -1,6 +1,11 @@
-.profile_info {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
+.profile__info {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+@media screen and (max-width: 700px) {
+  .profile__info {
+    flex-direction: column;
+    justify-content: center;
+  }
 }

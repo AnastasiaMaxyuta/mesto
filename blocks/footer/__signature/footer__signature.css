@@ -5,17 +5,11 @@
     font-size: 18px;
     line-height: 22px;
     color: #545454;
-    margin: 67px auto 60px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    margin: 0;
 }
-
-
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 620px) {
     .footer__signature {
         font-size: 14px;
         line-height: 17px;
-        margin: 48px auto 36px 19px;
     }
 }

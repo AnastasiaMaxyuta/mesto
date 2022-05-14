@@ -13,26 +13,17 @@
     </header>
     <main class="content">
       <section class="profile">
-        <div class="profile_info">
+        <div class="profile__info">
           <img src="./images/avatar.svg" alt="Аватар" class="profile__avatar">
           <div class="profile__text">
-            <h1 class="profile__name">Жак-Ив Кусто</h1>
-            <button class="profile__edit-button profile__edit-button_popup"></button>
-          </div>
-          <div class="popup">
-            <div class="popup__container">
-                <button type="button" class="popup__close"></button>
-                <h2 class="popup__title">Редактировать профиль</h2>
-                <input class="popup__name" name="name" type="text" required minlength="2" maxlength="25"
-                    placeholder="Name">
-                <input class="popup__profession" name="description" type="text" required minlength="2"
-                    maxlength="35" placeholder="Job">
-                <button type="submit" class="popup__submit" id="submit">Сохранить</button>
+            <div class="profile__general-information">
+              <h1 class="profile__name">Жак-Ив Кусто</h1>
+              <button class="profile__edit-button profile__edit-button_popup"></button>
             </div>
+            <p class="profile__profession">Исследователь океана</p>
           </div>
-          <p class="profile__profession">Исследователь океана</p>
-          <button class="profile__photo-edit"></button>
         </div>
+        <button class="profile__photo-edit" type='button'></button>
       </section>
       <section class="photo">
         <ul class="photo__items">
@@ -84,6 +75,17 @@
     <footer class="footer">
       <p class="footer__signature">&copy; 2022 Mesto Russia</p>
     </footer>
+    <div class="popup">
+      <div class="popup__container">
+          <button type="button" class="popup__close"></button>
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <input class="popup__name popup__input" name="name" type="text" required minlength="2" maxlength="25"
+              placeholder="Name">
+          <input class="popup__profession popup__input" name="description" type="text" required minlength="2"
+              maxlength="35" placeholder="Job">
+          <button type="submit" class="popup__submit" id="submit">Сохранить</button>
+      </div>
+    </div>
   </div>
   <script src="./script.js"></script>
 </body>
