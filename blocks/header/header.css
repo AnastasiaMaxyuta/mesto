@@ -1,13 +1,12 @@
 .header {
     max-width: 880px;
-    height: 74px;
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
     margin: 45px auto 40px;
     border-bottom: 1px solid rgb(84, 84, 84, .7);
 }
-@media (min-width: 550px) and (max-width: 1000px) {
+@media (max-width: 1000px) and (min-width: 550px) {
     .header {
       padding: 0 20px;
     }

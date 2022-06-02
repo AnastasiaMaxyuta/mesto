@@ -12,6 +12,7 @@
     padding: 0;
     background-color: black;
     color: white;
+    border: 0;
 }
 .popup__submit:hover {
     background: #000000;
@@ -20,7 +21,13 @@
     transition: 0.2s ease-in;
     cursor: pointer;
 }
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 960px) {
+    .popup__submit {
+        width: 300px;
+        margin: 18px 56px 25px;
+    }
+}
+@media screen and (max-width: 555px) {
     .popup__submit {
         width: 238px;
         margin: 45px 22px 25px 22px;
