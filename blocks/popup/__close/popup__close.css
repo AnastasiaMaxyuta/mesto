@@ -10,6 +10,9 @@
     border: none;
     outline: none;
     background-color: transparent;
+    opacity: 1;
+    transition: 0.4s ease;
+
 }
 @media screen and (max-width: 480px) {
     .popup__close {

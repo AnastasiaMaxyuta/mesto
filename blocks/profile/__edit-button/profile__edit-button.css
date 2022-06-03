@@ -1,7 +1,7 @@
 .profile__edit-button {
     box-sizing: border-box;
     flex: 0 0 24px;
-    margin: 0;
+    margin: 0 0 0 18px;
     height: 24px;
     border: 1px solid #fff;
     background: url("../../../images/P.png") no-repeat 50%;
@@ -14,5 +14,12 @@
     .profile__edit-button {
       flex: 0 0 18px;
       height: 18px;
+      margin: 0;
     }
   }
+  .profile__edit-button:hover {
+    color: #FFFFFF;
+    opacity: 0.5;
+    transition: 0.3s ease-in;
+    cursor: pointer;
+}
