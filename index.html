@@ -79,11 +79,13 @@
       <div class="popup__container">
           <button aria-label="Close" type="button" class="popup__close"></button>
           <h2 class="popup__title">Редактировать профиль</h2>
-          <input class="popup__name popup__input" name="name" type="text" required minlength="2" maxlength="25"
+          <form name="profile-edit" class="popup__form">
+            <input class="popup__name popup__input" name="name" type="text" required minlength="2" maxlength="25"
               placeholder="Имя">
-          <input class="popup__profession popup__input" name="description" type="text" required minlength="2"
+            <input class="popup__profession popup__input" name="description" type="text" required minlength="2"
               maxlength="35" placeholder="Работа">
-          <button type="submit" class="popup__submit" id="submit">Сохранить</button>
+            <button type="submit" class="popup__submit" id="submit">Сохранить</button>
+          </form>
       </div>
     </div>
   </div>
