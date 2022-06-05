@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mesto</title>
-  <link rel="stylesheet" href="./page/index.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mesto</title>
+    <link rel="icon" href="./images/iconrabbit.png" type="image/png">
+    <link rel="stylesheet" href="pages/index.css">
+  </head>
 <body class="body">
   <div class="page">
     <header class="header">
@@ -14,81 +15,63 @@
     <main class="content">
       <section class="profile">
         <div class="profile__info">
-          <img src="./images/avatar.svg" alt="Аватар" class="profile__avatar">
+          <img src="./images/Avatar.png" alt="Аватар" class="profile__avatar">
           <div class="profile__title">
             <div class="profile__general-information">
-              <h1 class="profile__name">Жак-Ив Кусто</h1>
-              <button aria-label ="Popup opening" class="profile__edit-button profile__edit-button_popup"></button>
+              <h1 class="profile__name">Жак-Ив Кусто</h1> 
+              <button aria-label="Popup opening" type="button" class="profile__button-edit"></button>
             </div>
-            <p class="profile__profession">Исследователь океана</p>
+            <p class="profile__description">Исследователь океана</p>
           </div>
         </div>
-        <button aria-label ="Adding a photo" class="profile__photo-edit" type='button'></button>
+        <button type="button" class="profile__button-add"></button>
       </section>
       <section class="photo">
-        <ul class="photo__items">
-          <li class="photo__card"> 
-            <img src="./images/karach.png" alt="Карачаевск" class="photo__item">
-            <div class="photo__signature">
-              <h2 class="photo__title">Карачаевск</h2>
-              <button aria-label ="Like" class="photo__like"></button>
-            </div>
-          </li>
-          <li class="photo__card"> 
-            <img src="./images/elbrus.png" alt="Гора Эльбрус" class="photo__item">
-            <div class="photo__signature">
-              <h2 class="photo__title">Гора Эльбрус</h2>
-              <button aria-label ="Like" class="photo__like"></button>
-            </div>
-          </li>
-          <li class="photo__card"> 
-            <img src="./images/tatry.png" alt="Домбай" class="photo__item">
-            <div class="photo__signature">
-              <h2 class="photo__title">Домбай</h2>
-              <button aria-label ="Like" class="photo__like"></button>
-            </div>
-          </li>
-          <li class="photo__card"> 
-            <img src="./images/elbrus.png" alt="Гора Эльбрус" class="photo__item">
-            <div class="photo__signature">
-              <h2 class="photo__title">Гора Эльбрус</h2>
-              <button aria-label ="Like" class="photo__like"></button>
-            </div>
-          </li>
-          <li class="photo__card"> 
-            <img src="./images/tatry.png" alt="Домбай" class="photo__item">
-            <div class="photo__signature">
-              <h2 class="photo__title">Домбай</h2>
-              <button aria-label ="Like" class="photo__like"></button>
-            </div>
-          </li>
-          <li class="photo__card"> 
-            <img src="./images/karach.png" alt="Карачаево-Черкесская Республика" class="photo__item">
-            <div class="photo__signature">
-              <h2 class="photo__title">Карачаево-Черкесская Республика</h2>
-              <button aria-label ="Like" class="photo__like"></button>
-            </div>
-          </li>
+        <ul class="photo__item">
         </ul>
       </section>
     </main>
     <footer class="footer">
       <p class="footer__signature">&copy; 2022 Mesto Russia</p>
     </footer>
-    <div class="popup">
-      <div class="popup__container">
-          <button aria-label="Close" type="button" class="popup__close"></button>
-          <h2 class="popup__title">Редактировать профиль</h2>
-          <form name="profile-edit" class="popup__form">
-            <input class="popup__name popup__input" name="name" type="text" required minlength="2" maxlength="25"
-              placeholder="Имя">
-            <input class="popup__profession popup__input" name="description" type="text" required minlength="2"
-              maxlength="35" placeholder="Работа">
-            <button type="submit" class="popup__submit" id="submit">Сохранить</button>
-          </form>
-      </div>
-    </div>
   </div>
+  <section class="popup">
+    <div class="popup__container popup__container_type_profile">
+      <form name="edit-form" class="popup__content">
+        <button aria-label="Close" type="button" class="popup__button-close"></button>
+        <h2 class="popup__title">Редактировать профиль</h2>
+        <input type="text" name="edit-name" placeholder="Имя" class="popup__input popup__input_type_name">
+        <input type="text" name="edit-description" placeholder="Описание" class="popup__input popup__input_type_description">
+        <button type="submit" class="popup__button popup__button_type_save"></button>
+      </form>
+    </div>
+    <div class="popup__container popup__container_type_cards">
+      <form name="add-form" class="popup__content">
+        <button aria-label="Close" type="button" class="popup__button-close"></button>
+        <h2 class="popup__title">Новое место</h2>
+        <input type="text" name="edit-title" placeholder="Место" class="popup__input popup__input_type_title">
+        <input type="text" name="edit-link" placeholder="Ссылка на картинку" class="popup__input popup__input_type_link">
+        <button type="submit" class="popup__button popup__button_type_create"></button>
+      </form>
+    </div>
+    <div class="popup__container popup__container_type_img">
+      <figure class="figure">
+        <img src="#" class="popup__foto" alt="">
+        <button aria-label="Close" type="button" class="popup__button-close"></button>
+        <figcaption><p class="popup__foto-name"></p></figcaption>
+      </figure>
+    </div>
+  </section>
+  <template class="cards-template">
+    <li class="item">
+       <img src="#" class="item__foto" alt="">
+       <button aria-label ="Delete" type="button" class="item__delete"></button>
+        <div class="item__description">
+          <p class="item__name"></p>
+          <button aria-label ="Like" type="button" class="item__like"></button>
+        </div>
+    </li>
+  </template>
   <script src="./scripts/script.js"></script>
 </body>
 </html>

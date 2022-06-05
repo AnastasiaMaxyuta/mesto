@@ -1,19 +1,19 @@
 .header {
-    max-width: 880px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    margin: 45px auto 40px;
-    border-bottom: 1px solid rgb(84, 84, 84, .7);
+  max-width: 880px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 45px auto 40px;
+  border-bottom: 1px solid rgb(84, 84, 84, .7);
 }
 @media (max-width: 1000px) and (min-width: 550px) {
-    .header {
-      padding: 0 20px;
-    }
+  .header {
+    padding: 0 20px;
   }
+}
 @media screen and (max-width: 549px) {
-    .header {
-      padding: 0;
-      margin: 0 auto 38px;
-    }
+  .header {
+    padding: 0;
+    margin: 0 auto 38px;
   }
+}

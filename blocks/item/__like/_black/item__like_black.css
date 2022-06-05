@@ -1,0 +1,6 @@
+.item__like_black {
+  background-image: url(../../../../images/like-black.svg);
+}
+.item__like_black:hover {
+  opacity: 1;
+}
