@@ -1,5 +1,5 @@
 .photo__item {
-  list-style-type: none; 
+  list-style-type: none;
   display: grid;
   grid-template-columns: repeat(3, 282px);
   column-gap: 17px;
