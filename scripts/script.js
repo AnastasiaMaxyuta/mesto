@@ -1,4 +1,4 @@
-const popupProfile = document.querySelector(".popup__profile"); //Редактирование профиля
+const popupProfile = document.querySelector(".popup_profile"); //Редактирование профиля
 const popupOpenEditWindow = document.querySelector(".profile__button-edit"); //Открытие попапа редактирования профиля
 const popupCloseEditWindow = popupProfile.querySelector(".popup__button-close"); //Закрытие попапа редактирования профиля
 const popupName = popupProfile.querySelector(".popup__input_type_name"); //Форма имени
@@ -6,12 +6,12 @@ const popupDescription = popupProfile.querySelector(".popup__input_type_descript
 const profileName = document.querySelector(".profile__name"); //Имя на странице 
 const profileDescription = document.querySelector(".profile__description"); //Описание на странице
 
-const popupCards = document.querySelector(".popup__cards"); //Добавление карточек
+const popupCards = document.querySelector(".popup_cards"); //Добавление карточек
 const popupAddOpenBnt = document.querySelector(".profile__button-add"); //Открытие попапа добавления карточек
 const contentForm =  popupCards.querySelector(".popup__content") //Форма попапа для добавления карточек
 const popupAddCloseBnt = popupCards.querySelector(".popup__button-close"); //Закрытия попапа добавления карточек
 
-const popupFullScreen = document.querySelector(".popup__img") //Открытие фотографии
+const popupFullScreen = document.querySelector(".popup_img") //Открытие фотографии
 const popupOpenFullScreen = document.querySelector(".item__foto"); //Кнопка открытия фотографии
 const popupCloseFullScreen = popupFullScreen.querySelector(".popup__button-close"); //Кнопка закрытия попапа фотографии
 
