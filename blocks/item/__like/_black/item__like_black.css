@@ -2,5 +2,6 @@
   background-image: url(../../../../images/like-black.svg);
 }
 .item__like_black:hover {
-  opacity: 1;
+  opacity: 0.5;
+  cursor: pointer;
 }
