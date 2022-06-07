@@ -102,8 +102,8 @@ function setEventListeners(card) {
 function openPopupFull(evt) {
   toggleModal(popupFullScreen);
   popupFoto.src = evt.target.src; //Наша картинка
-  popupFotoName.textContent = evt.currentTarget.parentElement.querySelector(".item__name").textContent; //Подпись к картинке  
-  popupFoto.alt = evt.currentTarget.parentElement.querySelector(".item__name").textContent; //Alt к картинке 
+  popupFotoName.textContent = evt.target.alt; //Подпись к картинке
+  popupFoto.alt = evt.target.alt; //Alt к картинке
 }
 
 //Редактирование профиля
@@ -123,7 +123,10 @@ function toggleModal(modal) {
   modal.classList.toggle("popup_open");
 } //Открытие и закрытие попапов
 
-popupOpenEditWindow.addEventListener("click", () => toggleModal(popupProfile), popupProfileEdit());
+popupOpenEditWindow.addEventListener("click", () => {
+  toggleModal(popupProfile);
+  popupProfileEdit();
+});
 popupCloseEditWindow.addEventListener("click", () => toggleModal(popupProfile));
 popupAddOpenBnt.addEventListener("click", () => toggleModal(popupCards));
 popupAddCloseBnt.addEventListener("click", () => toggleModal(popupCards));
