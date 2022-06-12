@@ -9,6 +9,7 @@ const profileDescription = document.querySelector(".profile__description"); //О
 const popupCards = document.querySelector(".popup_cards"); //Добавление карточек
 const popupAddOpenBnt = document.querySelector(".profile__button-add"); //Открытие попапа добавления карточек
 const contentForm =  popupCards.querySelector(".popup__content") //Форма попапа для добавления карточек
+const createBnt = popupCards.querySelector(".popup__button_type_create"); //Кнопка публикации новой карточки
 const popupAddCloseBnt = popupCards.querySelector(".popup__button-close"); //Закрытия попапа добавления карточек
 
 const popupFullScreen = document.querySelector(".popup_img") //Открытие фотографии
@@ -23,6 +24,8 @@ const photoItem = document.querySelector(".photo__item"); //Контейнер �
 
 const popupInputTitle = contentForm.querySelector(".popup__input_type_title");
 const popupInputLink = contentForm.querySelector(".popup__input_type_link");
+
+const popups = document.querySelectorAll(".popup") //Попапы
 
 const initialCards = [
   {
@@ -72,6 +75,8 @@ function addElements(evt) {
   photoItem.prepend(newCards); //Добавление на страницу
   contentForm.reset();
   toggleModal(popupCards);
+  createBnt.setAttribute("disabled", "disabled");
+  createBnt.classList.add("popup__button_disabled"); //Блокируем кнопки
 }
 
 function delitCard(evt) {
@@ -108,6 +113,7 @@ function openPopupFull(evt) {
 
 //Редактирование профиля
 function popupProfileEdit() {
+  toggleModal(popupProfile);
   popupName.value=profileName.textContent;
   popupDescription.value=profileDescription.textContent;
 }
@@ -121,16 +127,32 @@ popupProfile.addEventListener("submit", formSubmitHandler);
 
 function toggleModal(modal) {
   modal.classList.toggle("popup_open");
-} //Открытие и закрытие попапов
+    if (modal.classList.contains("popup_open")) { //Если попап открыт
+      document.addEventListener("keydown", escClose); //То мы добавляем обработчик
+    } else {  //Если нет
+      document.removeEventListener("keydown", escClose); //Тогда удаляем
+    }
+  }//Открытие и закрытие попапов
 
-popupOpenEditWindow.addEventListener("click", () => {
-  toggleModal(popupProfile);
-  popupProfileEdit();
-});
+popupOpenEditWindow.addEventListener("click", () => popupProfileEdit(popupProfile));
 popupCloseEditWindow.addEventListener("click", () => toggleModal(popupProfile));
 popupAddOpenBnt.addEventListener("click", () => toggleModal(popupCards));
 popupAddCloseBnt.addEventListener("click", () => toggleModal(popupCards));
 popupCloseFullScreen.addEventListener("click", () => toggleModal(popupFullScreen));
+ 
+function escClose(evt) {
+  if (evt.key === "Escape") {
+    const popupАctive = document.querySelector(".popup_open");
+    toggleModal(popupАctive);
+  }
+} //Закрытие попапов при нажатии на esc
 
+function overlayClose(evt) {
+  if (evt.target === evt.currentTarget) {
+    toggleModal(evt.target);
+  }
+}//Закрытие попапов при клике на оверлей
 
-
+popupProfile.addEventListener("click", overlayClose);
+popupCards.addEventListener("click", overlayClose);
+popupFullScreen.addEventListener("click", overlayClose);
