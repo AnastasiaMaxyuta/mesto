@@ -132,7 +132,7 @@ function toggleModal(modal) {
     } else {  //Если нет
       document.removeEventListener("keydown", escClose); //Тогда удаляем
     }
-  }//Открытие и закрытие попапов
+}//Открытие и закрытие попапов
 
 popupOpenEditWindow.addEventListener("click", () => popupProfileEdit(popupProfile));
 popupCloseEditWindow.addEventListener("click", () => toggleModal(popupProfile));
