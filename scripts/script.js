@@ -74,7 +74,7 @@ function addElements(evt) {
   const newCards = renderElements({ name: newCardText, link: newCardLink});
   photoItem.prepend(newCards); //Добавление на страницу
   contentForm.reset();
-  toggleModal(popupCards);
+  closePopup(popupCards);
   createBnt.setAttribute("disabled", "disabled");
   createBnt.classList.add("popup__button_disabled"); //Блокируем кнопки
 }
@@ -105,7 +105,7 @@ function setEventListeners(card) {
 }
 
 function openPopupFull(evt) {
-  toggleModal(popupFullScreen);
+  openPopup(popupFullScreen);
   popupFoto.src = evt.target.src; //Наша картинка
   popupFotoName.textContent = evt.target.alt; //Подпись к картинке
   popupFoto.alt = evt.target.alt; //Alt к картинке
@@ -113,7 +113,7 @@ function openPopupFull(evt) {
 
 //Редактирование профиля
 function popupProfileEdit() {
-  toggleModal(popupProfile);
+  openPopup(popupProfile);
   popupName.value=profileName.textContent;
   popupDescription.value=profileDescription.textContent;
 }
@@ -121,35 +121,36 @@ function formSubmitHandler(evt) {
   evt.preventDefault();
   profileName.textContent=popupName.value;
   profileDescription.textContent=popupDescription.value;
-  toggleModal(popupProfile);
+  closePopup(popupProfile);
 }
 popupProfile.addEventListener("submit", formSubmitHandler);
 
-function toggleModal(modal) {
-  modal.classList.toggle("popup_open");
-    if (modal.classList.contains("popup_open")) { //Если попап открыт
-      document.addEventListener("keydown", escClose); //То мы добавляем обработчик
-    } else {  //Если нет
-      document.removeEventListener("keydown", escClose); //Тогда удаляем
-    }
-}//Открытие и закрытие попапов
+const openPopup = (popupElement) => {
+  popupElement.classList.add('popup_open')
+  document.addEventListener('keydown', escClose)
+}
+
+const closePopup = (popupElement) => {
+  popupElement.classList.remove('popup_open')
+  document.removeEventListener('keydown', escClose)
+};
 
 popupOpenEditWindow.addEventListener("click", () => popupProfileEdit(popupProfile));
-popupCloseEditWindow.addEventListener("click", () => toggleModal(popupProfile));
-popupAddOpenBnt.addEventListener("click", () => toggleModal(popupCards));
-popupAddCloseBnt.addEventListener("click", () => toggleModal(popupCards));
-popupCloseFullScreen.addEventListener("click", () => toggleModal(popupFullScreen));
+popupCloseEditWindow.addEventListener("click", () => closePopup(popupProfile));
+popupAddOpenBnt.addEventListener("click", () => openPopup(popupCards));
+popupAddCloseBnt.addEventListener("click", () => closePopup(popupCards));
+popupCloseFullScreen.addEventListener("click", () => closePopup(popupFullScreen));
  
 function escClose(evt) {
   if (evt.key === "Escape") {
     const popupАctive = document.querySelector(".popup_open");
-    toggleModal(popupАctive);
+    closePopup(popupАctive);
   }
 } //Закрытие попапов при нажатии на esc
 
 function overlayClose(evt) {
   if (evt.target === evt.currentTarget) {
-    toggleModal(evt.target);
+    closePopup(evt.target);
   }
 }//Закрытие попапов при клике на оверлей
 
